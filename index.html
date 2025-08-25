@@ -3,110 +3,449 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bihar Agriculture Input Anudaan 2025-26 ke liye online apply karne ki step-by-step guide aur Bihar Bhumi Bhulagan lagan payment guide.">
-  <title>Bihar Agriculture Input Anudaan & Bhumi Lagan Guide</title>
+  <meta name="description" content="बिहार कृषि इनपुट अनुदान 2025-26, भूमि लगान भुगतान, LPC, आवासीय, जाति और आय प्रमाण पत्र के लिए विस्तृत ऑनलाइन गाइड।">
+  <title>बिहार सरकारी सेवाएं: ऑनलाइन आवेदन गाइड</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
+    :root {
+      --primary-color: #4CAF50; /* Green */
+      --secondary-color: #388E3C; /* Darker Green */
+      --accent-color: #2196F3; /* Blue for links/buttons */
+      --text-color: #333;
+      --light-text-color: #666;
+      --bg-light: #f9f9f9;
+      --bg-white: #ffffff;
+      --border-color: #e0e0e0;
+      --shadow-light: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-medium: 0 4px 12px rgba(0,0,0,0.1);
+      --header-height: 70px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.7;
+      background: var(--bg-light);
+      color: var(--text-color);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
     header {
-      background: #4CAF50;
+      background: var(--primary-color);
       color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-medium);
+      transition: all 0.3s ease;
     }
-    header div {
-      max-width: 900px;
+
+    header.scrolled {
+      background: var(--secondary-color);
+      padding: 10px 20px;
+    }
+
+    header .container {
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 0;
     }
+
     header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.5px;
     }
+
     nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.2s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: #e0e0e0;
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    section {
+      background: var(--bg-white);
+      padding: 40px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      border-bottom: 3px solid var(--primary-color);
+      padding-bottom: 10px;
+      display: inline-block;
+      line-height: 1.2;
+    }
+
+    h3 {
+      color: var(--secondary-color);
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.6rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: var(--light-text-color);
+    }
+
+    ul, ol {
+      margin-bottom: 15px;
+      padding-left: 25px;
+      color: var(--light-text-color);
+    }
+
+    ul li, ol li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .button:hover {
+      background: var(--secondary-color);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .step {
+      background: #e8f5e9; /* Light green */
+      padding: 20px;
+      margin: 15px 0;
+      border-left: 6px solid var(--primary-color);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .step:hover {
+      background: #dcf0dd; /* Slightly darker light green */
+      transform: translateX(5px);
+    }
+
+    .step strong {
+      color: var(--secondary-color);
+    }
+
+    .step-image {
+      width: 100%;
+      max-width: 700px; /* Limit image width */
+      height: auto;
+      margin: 20px auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: var(--shadow-light);
+      transition: transform 0.3s ease;
+    }
+
+    .step-image:hover {
+      transform: scale(1.01);
+    }
+
+    .bhu-section {
+      background: linear-gradient(135deg, #f0f8ff, #e6f2ff); /* Light blue gradient */
+      border-left: 6px solid #0b3d91;
+      padding: 30px;
+    }
+
+    .bhu-section h2 {
+      color: #0b3d91;
+      border-bottom-color: #0b3d91;
+    }
+
+    .bhu-section .button {
+      background: #0b3d91;
+    }
+
+    .bhu-section .button:hover {
+      background: #082a6b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--secondary-color);
+      color: white;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
       color: white;
       margin: 0 10px;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
-    nav a:hover {
+
+    footer a:hover {
+      color: #e0e0e0;
       text-decoration: underline;
     }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
+
+    /* Accordion Styles */
+    .accordion-item {
+      margin-bottom: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 15px 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .accordion-header:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .accordion-header .icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-header.active .icon {
+      transform: rotate(90deg);
+    }
+
+    .accordion-content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+      background-color: var(--bg-white);
+    }
+
+    .accordion-content.open {
+      max-height: 1000px; /* Adjust as needed for content height */
       padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #4CAF50;
-      margin-top: 30px;
+
+    /* Back to Top Button */
+    #backToTopBtn {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+      bottom: 30px; /* Place the button at the bottom of the page */
+      right: 30px; /* Place the button 30px from the right */
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      background-color: var(--accent-color); /* Set a background color */
+      color: white; /* Text color */
+      cursor: pointer; /* Add a mouse pointer on hover */
+      padding: 15px; /* Some padding */
+      border-radius: 50%; /* Rounded corners */
+      font-size: 18px; /* Increase font size */
+      box-shadow: var(--shadow-medium);
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
+
+    #backToTopBtn:hover {
+      background-color: var(--secondary-color); /* Add a darker background on hover */
+      transform: translateY(-3px);
     }
-    a {
-      color: #4CAF50;
-      text-decoration: none;
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+      nav a {
+        margin: 0 10px;
+        display: inline-block;
+      }
+      main {
+        margin: 20px auto;
+        padding: 15px;
+      }
+      section {
+        padding: 30px;
+      }
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 1.4rem;
+        margin-top: 25px;
+      }
+      .step {
+        padding: 15px;
+      }
     }
-    a:hover {
-      text-decoration: underline;
+
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 5px 0;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+      section {
+        padding: 20px;
+      }
+      .accordion-header {
+        font-size: 1rem;
+        padding: 12px 15px;
+      }
+      .accordion-header .icon {
+        font-size: 1.2rem;
+      }
+      .accordion-content {
+        padding: 0 15px;
+      }
+      .accordion-content.open {
+        padding: 15px;
+      }
     }
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #ddd;
-      margin-top: 20px;
-    }
-    .step {
-      background: #e8f5e9;
-      padding: 15px;
-      margin: 10px 0;
-      border-left: 5px solid #4CAF50;
-    }
-    .step-image {
-      width: 100%;
-      margin: 10px 0 20px 0;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .bhu-section {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 18px;
-      border-radius: 8px;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;
-    }
-    button {
-      padding:6px 10px;
-      border-radius:6px;
-      border:1px solid #ddd;
-      background:#fff;
-      cursor:pointer;
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+      nav a {
+        font-size: 0.9rem;
+      }
+      h2 {
+        font-size: 1.4rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+      }
+      .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+      #backToTopBtn {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Updated Header with Navigation -->
   <header>
-    <div>
-      <h1>Bihar Agriculture Input Anudaan 2025-26</h1>
+    <div class="container">
+      <h1>बिहार सरकारी सेवाएं</h1>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="#overview">कृषि अनुदान</a>
+        <a href="#bhu-lagan-guide">भूमि लगान</a>
+        <a href="#lpc-guide">LPC</a>
+        <a href="#common-certificates-guide">प्रमाण पत्र</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="privacy.html">गोपनीयता नीति</a>
+        <a href="#contact">संपर्क</a>
       </nav>
     </div>
   </header>
@@ -114,7 +453,7 @@
   <main>
     <!-- Agriculture Input Anudaan Section -->
     <section id="overview">
-      <h2>योजना का विवरण</h2>
+      <h2>कृषि इनपुट अनुदान 2025-26</h2>
       <p>
         बिहार सरकार ने खरीफ 2025-26 के लिए कृषि इनपुट अनुदान योजना शुरू की है।
         यह योजना उन किसानों के लिए है जिनकी फसलें बाढ़ या अतिवृष्टि से प्रभावित हुई हैं।
@@ -125,10 +464,8 @@
         <li>आवेदन की अंतिम तिथि: 5 सितंबर 2025</li>
         <li>आवेदन का माध्यम: <a href="https://dbtagriculture.bihar.gov.in/InputTest/OnlineApplication2223.aspx" target="_blank">ऑनलाइन आवेदन</a></li>
       </ul>
-    </section>
 
-    <section id="eligibility">
-      <h2>पात्रता और अनुदान राशि</h2>
+      <h3>पात्रता और अनुदान राशि</h3>
       <ul>
         <li>पात्र किसान: खरीफ 2025 की फसलें बाढ़ या अतिवृष्टि से प्रभावित</li>
         <li>पंजीकरण: DBT पोर्टल पर 13 अंकों का पंजीकरण संख्या</li>
@@ -142,19 +479,15 @@
         <li>अधिकतम सीमा: प्रति किसान 2 हेक्टेयर</li>
         <li>न्यूनतम अनुदान: असिंचित ₹1,000, सिंचित ₹2,000, शाश्वत ₹2,500</li>
       </ul>
-    </section>
 
-    <section id="required-documents">
-      <h2>आवश्यक दस्तावेज़</h2>
+      <h3>आवश्यक दस्तावेज़</h3>
       <ul>
         <li>अपडेटेड (24-25) भूमि रसीद/खसरा प्रमाण</li>
         <li>बैंक खाता विवरण (आधार लिंक सहित)</li>
         <li>आधार कार्ड की प्रति</li>
       </ul>
-    </section>
 
-    <section id="apply-steps">
-      <h2>आवेदन करने के स्टेप्स</h2>
+      <h3>आवेदन करने के स्टेप्स</h3>
       <div class="step">1. पंजीकरण करें: <a href="https://dbtagriculture.bihar.gov.in/RegFarmer/" target="_blank">DBT पोर्टल पर पंजीकरण</a></div>
       <div class="step">2. लॉगिन करें: 13 अंकों की पंजीकरण संख्या और OTP के माध्यम से लॉगिन करें</div>
       <div class="step">3. आवेदन फॉर्म भरें: "कृषि इनपुट अनुदान (खरीफ)-2025-26" लिंक पर क्लिक करें</div>
@@ -163,52 +496,355 @@
       <div class="step">6. अनुदान वितरण: सत्यापन के बाद, राशि सीधे आपके बैंक खाते में भेजी जाएगी</div>
 
       <p>नीचे संबंधित images देखें:</p>
-      <img src="1.jpg" alt="Step 1 Image" class="step-image">
-      <img src="2.jpg" alt="Step 2 Image" class="step-image">
-      <img src="3.jpg" alt="Step 3 Image" class="step-image">
-      <img src="4.jpg" alt="Step 4 Image" class="step-image">
-      <img src="5.jpg" alt="Step 5 & 6 Image" class="step-image">
+      <img src="1.jpg" alt="Step 1 Image - DBT Portal Registration" class="step-image">
+      <img src="2.jpg" alt="Step 2 Image - DBT Login" class="step-image">
+      <img src="3.jpg" alt="Step 3 Image - Application Form" class="step-image">
+      <img src="4.jpg" alt="Step 4 Image - Document Upload" class="step-image">
+      <img src="5.jpg" alt="Step 5 & 6 Image - Verification and Payment" class="step-image">
     </section>
 
     <!-- Bihar Bhumi Guide Section -->
     <section id="bhu-lagan-guide" class="bhu-section" aria-labelledby="bhu-title">
-      <header style="display:flex;align-items:center;justify-content:space-between;">
-        <h2 id="bhu-title" style="margin:0;font-size:1.25rem;color:#0b3d91;">BHULAGAN / Bihar Bhumi — ऑनलाइन लगान भुगतान (स्टेप-बाय-स्टेप)</h2>
+      <header style="display:flex;align-items:center;justify-content:space-between; margin-bottom: 20px;">
+        <h2 id="bhu-title" style="margin:0;font-size:1.8rem;color:#0b3d91; border-bottom: none; padding-bottom: 0;">BHULAGAN / Bihar Bhumi — ऑनलाइन लगान भुगतान (स्टेप-बाय-स्टेप)</h2>
         <div>
-          <button type="button" onclick="printSection('bhu-lagan-guide')">Print</button>
+          <button type="button" onclick="printSection('bhu-lagan-guide')" class="button">प्रिंट करें</button>
         </div>
       </header>
 
-      <p style="color:#333;margin:12px 0 18px;line-height:1.5;">
+      <p style="color:var(--light-text-color);margin:12px 0 18px;line-height:1.5;">
         आधिकारिक वेबसाइट: <a href="https://biharbhumi.bihar.gov.in/" target="_blank">biharbhumi.bihar.gov.in</a><br>
         आवश्यक जानकारी पहले तैयार रखें — (जिला, अंचल/हल्का, मौजा, भाग/पृष्ठ या खाता/खेसरा/प्लॉट नंबर, मोबाइल)। भुगतान के लिए UPI/Netbanking/Debit/Credit-Card तैयार रखें।
       </p>
 
-      <ol style="padding-left:18px;color:#222;line-height:1.6;">
-        <li>
+      <ol style="padding-left:20px;color:var(--light-text-color);line-height:1.6;">
+        <li style="margin-top:15px;">
           <strong>जो चीज़ें पहले तैयार रखें</strong>
-          <div style="margin-top:6px;">जिले का नाम, अंचल/हल्का, मौजा, भाग-नंबर और पृष्ठ संख्या — या खाता/खेसरा विवरण।</div>
-          <img src="6.jpg" alt="Step 1 Screenshot" style="margin-top:8px;max-width:100%;border-radius:6px;border:1px solid #ccc;">
+          <div style="margin-top:8px;">जिले का नाम, अंचल/हल्का, मौजा, भाग-नंबर और पृष्ठ संख्या — या खाता/खेसरा विवरण।</div>
+          <img src="6.jpg" alt="Step 1 Screenshot - Prepare Documents" class="step-image">
         </li>
-        <li style="margin-top:10px;">
+        <li style="margin-top:15px;">
           <strong>आधिकारिक पोर्टल खोलें</strong>
-          <div style="margin-top:6px;">भू-लगान पेज खोलें और “ऑनलाइन लगान भुगतान” चुनें।</div>
-          <img src="7.jpg" alt="Step 2 Screenshot" style="margin-top:8px;max-width:100%;border-radius:6px;border:1px solid #ccc;">
+          <div style="margin-top:8px;">भू-लगान पेज खोलें और “ऑनलाइन लगान भुगतान” चुनें।</div>
+          <img src="7.jpg" alt="Step 2 Screenshot - Open Portal" class="step-image">
         </li>
-        <li style="margin-top:10px;">
+        <li style="margin-top:15px;">
           <strong>जमीन खोजें — फॉर्म भरें</strong>
-          <div style="margin-top:6px;">जिला/अंचल चुनकर खोजें।</div>
-          <img src="8.jpg" alt="Step 3 Screenshot" style="margin-top:8px;max-width:100%;border-radius:6px;border:1px solid #ccc;">
+          <div style="margin-top:8px;">जिला/अंचल चुनकर खोजें।</div>
+          <img src="8.jpg" alt="Step 3 Screenshot - Search Land" class="step-image">
         </li>
-        <li style="margin-top:10px;">
+        <li style="margin-top:15px;">
           <strong>टैक्स राशि देखें और भुगतान करें</strong>
-          <img src="9.jpg" alt="Step 4 Screenshot" style="margin-top:8px;max-width:100%;border-radius:6px;border:1px solid #ccc;">
+          <img src="9.jpg" alt="Step 4 Screenshot - View Tax and Pay" class="step-image">
         </li>
-        <li style="margin-top:10px;">
+        <li style="margin-top:15px;">
           <strong>भुगतान पूरा करें और रसीद डाउनलोड करें</strong>
-          <img src="10.jpg" alt="Step 5 Screenshot" style="margin-top:8px;max-width:100%;border-radius:6px;border:1px solid #ccc;">
+          <img src="10.jpg" alt="Step 5 Screenshot - Complete Payment and Download Receipt" class="step-image">
         </li>
       </ol>
+    </section>
+
+    <!-- New Section: LPC Guide -->
+    <section id="lpc-guide">
+      <h2>बिहार में LPC (भू-स्वामित्व प्रमाण पत्र) के लिए आवेदन कैसे करें</h2>
+      <p>LPC (Land Possession Certificate) या भू-स्वामित्व प्रमाण पत्र, बिहार में जमीन के मालिकाना हक और कब्जे को प्रमाणित करने वाला एक महत्वपूर्ण दस्तावेज है। यह विभिन्न सरकारी योजनाओं, बैंक ऋण, या जमीन से संबंधित अन्य कार्यों के लिए आवश्यक होता है।</p>
+      <p>यह गाइड आपको LPC के लिए ऑनलाइन आवेदन करने की पूरी प्रक्रिया बताएगी।</p>
+
+      <h3>LPC आवेदन के लिए आवश्यक दस्तावेज़</h3>
+      <p>आवेदन करने से पहले, सुनिश्चित करें कि आपके पास निम्नलिखित दस्तावेज़ तैयार हैं:</p>
+      <ul>
+        <li><strong>जमीन का रसीद (Land Receipt):</strong> नवीनतम लगान रसीद (Current Land Tax Receipt) या पिछले कुछ वर्षों की रसीदें।</li>
+        <li><strong>जमीन का कागजात (Land Documents):</strong>
+          <ul>
+            <li>जमीन का केवाला (Sale Deed) या रजिस्ट्री पेपर।</li>
+            <li>जमीन का खतियान (Khatiyan) या जमाबंदी (Jamabandi) की कॉपी।</li>
+          </ul>
+        </li>
+        <li><strong>पहचान प्रमाण (Identity Proof):</strong> आधार कार्ड (Aadhaar Card) या वोटर आईडी कार्ड (Voter ID Card)।</li>
+        <li><strong>मोबाइल नंबर (Mobile Number):</strong> एक सक्रिय मोबाइल नंबर, जो आधार से लिंक हो तो बेहतर।</li>
+        <li><strong>ईमेल आईडी (Email ID):</strong> (वैकल्पिक, लेकिन अनुशंसित)</li>
+      </ul>
+
+      <h3>LPC के लिए ऑनलाइन आवेदन करने की प्रक्रिया</h3>
+      <p>बिहार में LPC के लिए आवेदन "भूमि जानकारी" पोर्टल के माध्यम से किया जाता है।</p>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 1: बिहार भूमि पोर्टल पर जाएँ <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>सबसे पहले, बिहार सरकार के राजस्व एवं भूमि सुधार विभाग की आधिकारिक वेबसाइट पर जाएँ: <a href="https://biharbhumi.bihar.gov.in/" target="_blank">https://biharbhumi.bihar.gov.in/</a></p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 2: "ऑनलाइन LPC आवेदन करें" पर क्लिक करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>वेबसाइट के होमपेज पर, आपको "ऑनलाइन LPC आवेदन करें" (Apply Online for LPC) का विकल्प मिलेगा। इस पर क्लिक करें।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 3: जिला और अंचल का चयन करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>एक नया पेज खुलेगा जहाँ आपको अपना <strong>जिला (District)</strong> और <strong>अंचल (Anchal)</strong> चुनना होगा। चयन करने के बाद, "प्रोसीड" (Proceed) बटन पर क्लिक करें।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 4: लॉगिन करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>अब आपको लॉगिन पेज पर रीडायरेक्ट किया जाएगा। यदि आपके पास पहले से अकाउंट नहीं है, तो "रजिस्ट्रेशन" (Registration) या "नया पंजीकरण" (New Registration) पर क्लिक करके एक नया अकाउंट बनाएँ। इसके लिए आपको अपना नाम, ईमेल आईडी, मोबाइल नंबर और एक पासवर्ड बनाना होगा। यदि आपके पास अकाउंट है, तो अपने <strong>मोबाइल नंबर/ईमेल आईडी</strong> और <strong>पासवर्ड</strong> का उपयोग करके लॉगिन करें।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 5: जमाबंदी देखें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>लॉगिन करने के बाद, आपको "जमाबंदी पंजी देखें" (View Jamabandi Register) का विकल्प मिलेगा। इस पर क्लिक करें। यहाँ आपको अपनी जमाबंदी खोजने के लिए कुछ जानकारी दर्ज करनी होगी:</p>
+            <ul>
+              <li><strong>जिला (District)</strong> और <strong>अंचल (Anchal)</strong> (जो आपने पहले चुना था, वह ऑटो-फिल हो सकता है)।</li>
+              <li><strong>हल्का (Halka)</strong>: अपने गाँव/क्षेत्र का हल्का चुनें।</li>
+              <li><strong>मौजा (Mauja)</strong>: अपने गाँव का नाम चुनें।</li>
+              <li><strong>भाग वर्तमान (Part Present)</strong> और <strong>पृष्ठ संख्या वर्तमान (Page Number Present)</strong>: यह जानकारी आपकी पुरानी लगान रसीद या जमाबंदी कागजात पर मिल जाएगी।</li>
+              <li>आप <strong>रैयत के नाम से (By Raiyat Name)</strong>, <strong>खाता नंबर से (By Khata Number)</strong>, <strong>खेसरा नंबर से (By Khesra Number)</strong> या <strong>जमाबंदी नंबर से (By Jamabandi Number)</strong> भी खोज सकते हैं।</li>
+            </ul>
+            <p>सही जानकारी दर्ज करने के बाद, "सुरक्षा कोड" (Security Code) भरें और "सर्च" (Search) बटन पर क्लिक करें। आपकी जमाबंदी का विवरण स्क्रीन पर दिखाई देगा। इसे ध्यान से जाँच लें।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 6: LPC के लिए आवेदन करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>जमाबंदी विवरण देखने के बाद, उसी पेज पर आपको "LPC आवेदन करें" (Apply for LPC) का विकल्प मिलेगा। इस पर क्लिक करें। एक आवेदन फॉर्म खुलेगा। इसमें निम्नलिखित जानकारी भरें:</p>
+            <ul>
+              <li><strong>आवेदक का नाम (Applicant's Name)</strong></li>
+              <li><strong>पिता/पति का नाम (Father's/Husband's Name)</strong></li>
+              <li><strong>मोबाइल नंबर (Mobile Number)</strong></li>
+              <li><strong>ईमेल आईडी (Email ID)</strong> (वैकल्पिक)</li>
+              <li><strong>वर्तमान पता (Current Address)</strong></li>
+              <li><strong>स्थायी पता (Permanent Address)</strong></li>
+              <li><strong>आवेदन का कारण (Reason for Application):</strong> यहाँ स्पष्ट रूप से बताएँ कि आपको LPC क्यों चाहिए (जैसे सरकारी योजना, बैंक ऋण, आदि)।</li>
+            </ul>
+            <p>सभी जानकारी भरने के बाद, "सुरक्षा कोड" (Security Code) भरें और "सेव एंड नेक्स्ट" (Save & Next) या "आगे बढ़ें" पर क्लिक करें।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 7: दस्तावेज़ अपलोड करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>अब आपको आवश्यक दस्तावेज़ अपलोड करने होंगे। आमतौर पर, आपको अपनी <strong>नवीनतम लगान रसीद</strong> और <strong>जमीन के कागजात (केवाला/खतियान/जमाबंदी)</strong> की स्कैन की हुई कॉपी अपलोड करनी होगी। सुनिश्चित करें कि दस्तावेज़ स्पष्ट और पठनीय हों, और निर्धारित फ़ाइल साइज़ और फॉर्मेट (जैसे PDF) में हों। दस्तावेज़ अपलोड करने के बाद, "सबमिट" (Submit) बटन पर क्लिक करें।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 8: आवेदन की पुष्टि और रसीद <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>आवेदन सफलतापूर्वक सबमिट होने के बाद, आपको एक <strong>आवेदन संख्या (Application Number)</strong> या <strong>रसीद संख्या (Receipt Number)</strong> प्राप्त होगी। इस संख्या को सुरक्षित रूप से नोट कर लें या रसीद का प्रिंटआउट ले लें। यह आपके आवेदन की स्थिति ट्रैक करने के लिए महत्वपूर्ण है।</p>
+          </div>
+        </div>
+      </div> <!-- End Accordion Container -->
+
+      <h3>LPC आवेदन की स्थिति कैसे जाँचें</h3>
+      <ul>
+        <li>बिहार भूमि पोर्टल पर वापस जाएँ।</li>
+        <li>"LPC आवेदन स्थिति देखें" (View LPC Application Status) विकल्प पर क्लिक करें।</li>
+        <li>अपना <strong>जिला (District)</strong>, <strong>अंचल (Anchal)</strong> और <strong>आवेदन संख्या (Application Number)</strong> दर्ज करें।</li>
+        <li>"सर्च" (Search) पर क्लिक करें।</li>
+        <li>आपके आवेदन की वर्तमान स्थिति (जैसे लंबित, सत्यापन में, स्वीकृत, अस्वीकृत) स्क्रीन पर दिखाई देगी।</li>
+      </ul>
+
+      <h3>महत्वपूर्ण बातें</h3>
+      <ul>
+        <li><strong>सत्यापन प्रक्रिया:</strong> आपके आवेदन के बाद, राजस्व कर्मचारी (कर्मचारी) और अंचल अधिकारी (CO) द्वारा जमीन का सत्यापन किया जाएगा। इसमें कुछ समय लग सकता है।</li>
+        <li><strong>त्रुटि सुधार:</strong> यदि आवेदन में कोई त्रुटि पाई जाती है, तो आपको सूचित किया जा सकता है। सुनिश्चित करें कि आपका मोबाइल नंबर सक्रिय हो।</li>
+        <li><strong>स्वीकृति के बाद:</strong> एक बार LPC स्वीकृत हो जाने के बाद, आप इसे पोर्टल से डाउनलोड कर सकते हैं।</li>
+        <li><strong>नवीनतम जानकारी:</strong> सरकारी पोर्टल और प्रक्रियाएँ समय-समय पर बदल सकती हैं। आवेदन करने से पहले हमेशा आधिकारिक वेबसाइट पर नवीनतम निर्देशों की जाँच करें।</li>
+      </ul>
+    </section>
+
+    <!-- New Section: Common Certificates Guide -->
+    <section id="common-certificates-guide">
+      <h2>बिहार में आवासीय, जाति और आय प्रमाण पत्र ऑनलाइन कैसे बनवाएं</h2>
+      <p>बिहार में विभिन्न सरकारी सेवाओं, छात्रवृत्ति, नौकरियों और अन्य लाभों के लिए आवासीय, जाति और आय प्रमाण पत्र आवश्यक होते हैं। ये तीनों प्रमाण पत्र RTPS (Right to Public Services) पोर्टल के माध्यम से ऑनलाइन बनवाए जा सकते हैं।</p>
+
+      <h3>आवश्यक दस्तावेज़ (Common Documents Required)</h3>
+      <p>इन तीनों प्रमाण पत्रों के लिए कुछ सामान्य दस्तावेज़ों की आवश्यकता होती है:</p>
+      <ul>
+        <li><strong>पहचान प्रमाण (Identity Proof):</strong> आधार कार्ड (Aadhaar Card), वोटर आईडी कार्ड (Voter ID Card), पैन कार्ड (PAN Card) (कोई एक)।</li>
+        <li><strong>पता प्रमाण (Address Proof):</strong> आधार कार्ड (Aadhaar Card), वोटर आईडी कार्ड (Voter ID Card), बिजली बिल (Electricity Bill), टेलीफोन बिल (Telephone Bill), राशन कार्ड (Ration Card) (कोई एक)।</li>
+        <li><strong>पासपोर्ट साइज़ फोटो (Passport Size Photograph):</strong> आवेदक की हाल की पासपोर्ट साइज़ फोटो।</li>
+        <li><strong>मोबाइल नंबर (Mobile Number):</strong> एक सक्रिय मोबाइल नंबर।</li>
+        <li><strong>ईमेल आईडी (Email ID):</strong> (वैकल्पिक, लेकिन अनुशंसित)</li>
+      </ul>
+
+      <h3>सामान्य ऑनलाइन आवेदन प्रक्रिया</h3>
+      <p>तीनों प्रमाण पत्रों के लिए ऑनलाइन आवेदन प्रक्रिया काफी हद तक समान है। यहाँ सामान्य स्टेप्स दिए गए हैं, और फिर प्रत्येक प्रमाण पत्र के लिए विशिष्ट विवरण बताए जाएंगे।</p>
+      <div class="accordion-container">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 1: RTPS पोर्टल पर जाएँ <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>सबसे पहले, बिहार सरकार के सेवा अधिकार (Right to Public Services) पोर्टल पर जाएँ: <a href="https://serviceonline.bihar.gov.in/" target="_blank">https://serviceonline.bihar.gov.in/</a></p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 2: "ऑनलाइन आवेदन दें" पर क्लिक करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>होमपेज पर, आपको "ऑनलाइन आवेदन दें" (Apply Online) सेक्शन मिलेगा। इसके नीचे "लोक सेवाओं का अधिकार की सेवाएँ" (Services of Right to Public Services) में आपको विभिन्न प्रमाण पत्रों के विकल्प मिलेंगे।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 3: प्रमाण पत्र का चयन करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>आपको जिस प्रमाण पत्र के लिए आवेदन करना है, उस पर क्लिक करें:</p>
+            <ul>
+              <li><strong>आवासीय प्रमाण पत्र (Residence Certificate)</strong></li>
+              <li><strong>जाति प्रमाण पत्र (Caste Certificate)</strong></li>
+              <li><strong>आय प्रमाण पत्र (Income Certificate)</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 4: अंचल स्तर का चयन करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>क्लिक करने के बाद, आपको "अंचल अधिकारी स्तर से" (From Anchal Officer Level) का विकल्प चुनना होगा। यह शुरुआती स्तर है जहाँ से आवेदन प्रक्रिया शुरू होती है।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 5: आवेदन फॉर्म भरें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>एक विस्तृत आवेदन फॉर्म खुलेगा। इसमें निम्नलिखित जानकारी ध्यानपूर्वक भरें:</p>
+            <ul>
+              <li><strong>लिंग (Gender):</strong> पुरुष/महिला/अन्य।</li>
+              <li><strong>अभिवादन (Salutation):</strong> श्री/श्रीमती/कोई नहीं।</li>
+              <li><strong>आवेदक का नाम (Applicant's Name):</strong> हिंदी और अंग्रेजी दोनों में।</li>
+              <li><strong>पिता का नाम (Father's Name):</strong> हिंदी और अंग्रेजी दोनों में।</li>
+              <li><strong>माता का नाम (Mother's Name):</strong> हिंदी और अंग्रेजी दोनों में।</li>
+              <li><strong>पति का नाम (Husband's Name):</strong> (यदि लागू हो) हिंदी और अंग्रेजी दोनों में।</li>
+              <li><strong>मोबाइल नंबर (Mobile Number):</strong> अनिवार्य।</li>
+              <li><strong>ईमेल आईडी (Email ID):</strong> (वैकल्पिक, लेकिन अनुशंसित)।</li>
+              <li><strong>राज्य (State):</strong> बिहार (ऑटो-फिल)।</li>
+              <li><strong>जिला (District):</strong> अपना जिला चुनें।</li>
+              <li><strong>अनुमंडल (Sub-division):</strong> अपना अनुमंडल चुनें।</li>
+              <li><strong>प्रखंड (Block):</strong> अपना प्रखंड चुनें।</li>
+              <li><strong>स्थानीय निकाय का प्रकार (Type of Local Body):</strong> ग्राम पंचायत/नगर निगम/नगर परिषद/नगर पंचायत।</li>
+              <li><strong>वार्ड संख्या (Ward No.):</strong> अपना वार्ड नंबर भरें।</li>
+              <li><strong>गाँव/मोहल्ला (Village/Mohalla):</strong> अपने गाँव/मोहल्ले का नाम भरें।</li>
+              <li><strong>डाकघर (Post Office):</strong> अपने डाकघर का नाम भरें।</li>
+              <li><strong>थाना (Police Station):</strong> अपना थाना चुनें।</li>
+              <li><strong>पिन कोड (Pin Code):</strong> अपना पिन कोड भरें।</li>
+              <li><strong>आवेदक का फोटो (Applicant's Photo):</strong> अपनी पासपोर्ट साइज़ फोटो अपलोड करें।</li>
+              <li><strong>आधार संख्या (Aadhaar Number):</strong> (वैकल्पिक, लेकिन यदि आप इसे भरते हैं, तो आपके आधार से लिंक मोबाइल नंबर पर OTP आएगा)।</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 6: दस्तावेज़ अपलोड करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>फॉर्म भरने के बाद, "Attach Annexure" (दस्तावेज़ संलग्न करें) बटन पर क्लिक करें। यहाँ आपको आवश्यक दस्तावेज़ों की स्कैन की हुई कॉपी अपलोड करनी होगी। सुनिश्चित करें कि दस्तावेज़ स्पष्ट और पठनीय हों, और निर्धारित फ़ाइल साइज़ और फॉर्मेट (जैसे PDF, JPEG) में हों। प्रत्येक प्रमाण पत्र के लिए विशिष्ट दस्तावेज़ नीचे दिए गए हैं।</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            स्टेप 7: आवेदन सबमिट करें <span class="icon">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>सभी जानकारी और दस्तावेज़ अपलोड करने के बाद, "Submit" (सबमिट करें) बटन पर क्लिक करें। एक बार सबमिट होने के बाद, आपको एक <strong>आवेदन रसीद (Application Receipt)</strong> प्राप्त होगी। इस रसीद को डाउनलोड करें और प्रिंटआउट ले लें। इसमें आपका <strong>आवेदन संख्या (Application Number)</strong> और <strong>सेवा प्रदान करने की तिथि (Date of Service Delivery)</strong> लिखी होगी। यह संख्या आपके आवेदन की स्थिति ट्रैक करने के लिए महत्वपूर्ण है।</p>
+          </div>
+        </div>
+      </div> <!-- End Accordion Container -->
+
+      <h3>1. आवासीय प्रमाण पत्र (Residence Certificate) - बिहार</h3>
+      <p><strong>उद्देश्य:</strong> यह प्रमाणित करता है कि व्यक्ति बिहार राज्य का स्थायी निवासी है।</p>
+      <p><strong>अतिरिक्त आवश्यक दस्तावेज़ (Additional Documents):</strong> ऊपर बताए गए सामान्य दस्तावेज़ ही पर्याप्त हैं।</p>
+      <p><strong>आवेदन लिंक (Direct Link):</strong>
+        RTPS पोर्टल पर जाएँ: <a href="https://serviceonline.bihar.gov.in/" target="_blank">https://serviceonline.bihar.gov.in/</a>
+        "लोक सेवाओं का अधिकार की सेवाएँ" में "आवासीय प्रमाण पत्र का निर्गमन" पर क्लिक करें, फिर "अंचल अधिकारी स्तर से" चुनें।
+      </p>
+      <p><strong>आवेदन फॉर्म में विशिष्ट जानकारी:</strong>
+        आपको यह बताना होगा कि आप कितने समय से इस पते पर रह रहे हैं।
+        आवेदन का उद्देश्य (जैसे सरकारी योजना, शिक्षा, आदि)।
+      </p>
+
+      <h3>2. जाति प्रमाण पत्र (Caste Certificate) - बिहार</h3>
+      <p><strong>उद्देश्य:</strong> यह प्रमाणित करता है कि व्यक्ति बिहार राज्य में किस जाति/वर्ग (जैसे SC, ST, EBC, BC) से संबंधित है। यह आरक्षण और अन्य लाभों के लिए आवश्यक है।</p>
+      <p><strong>अतिरिक्त आवश्यक दस्तावेज़ (Additional Documents):</strong></p>
+      <ul>
+        <li><strong>जाति प्रमाण पत्र के लिए शपथ पत्र (Caste Certificate Affidavit):</strong> यह एक स्व-घोषणा पत्र होता है जिसे आपको भरकर अपलोड करना होता है। यह पोर्टल पर ही उपलब्ध होता है या आप इसे किसी वकील से बनवा सकते हैं।</li>
+        <li><strong>पिता/दादा का जाति प्रमाण पत्र (Father's/Grandfather's Caste Certificate):</strong> यदि उपलब्ध हो, तो यह आवेदन प्रक्रिया को आसान बनाता है।</li>
+        <li><strong>भूमि संबंधी दस्तावेज़ (Land Related Documents):</strong> (वैकल्पिक, लेकिन सहायक) जैसे खतियान, जमाबंदी, लगान रसीद, आदि।</li>
+      </ul>
+      <p><strong>आवेदन लिंक (Direct Link):</strong>
+        RTPS पोर्टल पर जाएँ: <a href="https://serviceonline.bihar.gov.in/" target="_blank">https://serviceonline.bihar.gov.in/</a>
+        "लोक सेवाओं का अधिकार की सेवाएँ" में "जाति प्रमाण पत्र का निर्गमन" पर क्लिक करें, फिर "अंचल अधिकारी स्तर से" चुनें।
+      </p>
+      <p><strong>आवेदन फॉर्म में विशिष्ट जानकारी:</strong>
+        आपको अपनी जाति और उप-जाति का चयन करना होगा।
+        पिता/दादा की जाति संबंधी जानकारी।
+      </p>
+
+      <h3>3. आय प्रमाण पत्र (Income Certificate) - बिहार</h3>
+      <p><strong>उद्देश्य:</strong> यह व्यक्ति और उसके परिवार की वार्षिक आय को प्रमाणित करता है। यह विभिन्न सरकारी योजनाओं, छात्रवृत्ति और आर्थिक रूप से कमजोर वर्ग (EWS) के लाभों के लिए आवश्यक है।</p>
+      <p><strong>अतिरिक्त आवश्यक दस्तावेज़ (Additional Documents):</strong></p>
+      <ul>
+        <li><strong>आय का स्रोत (Source of Income):</strong> आपको अपनी आय का स्रोत (जैसे कृषि, वेतन, व्यवसाय, पेंशन, आदि) बताना होगा।</li>
+        <li><strong>आय का विवरण (Income Details):</strong> आपको अपनी और परिवार के सदस्यों की वार्षिक आय का अनुमानित विवरण देना होगा।</li>
+        <li><strong>आय प्रमाण पत्र के लिए शपथ पत्र (Income Certificate Affidavit):</strong> यह भी एक स्व-घोषणा पत्र होता है जिसे भरकर अपलोड करना होता है।</li>
+      </ul>
+      <p><strong>आवेदन लिंक (Direct Link):</strong>
+        RTPS पोर्टल पर जाएँ: <a href="https://serviceonline.bihar.gov.in/" target="_blank">https://serviceonline.bihar.gov.in/</a>
+        "लोक सेवाओं का अधिकार की सेवाएँ" में "आय प्रमाण पत्र का निर्गमन" पर क्लिक करें, फिर "अंचल अधिकारी स्तर से" चुनें।
+      </p>
+      <p><strong>आवेदन फॉर्म में विशिष्ट जानकारी:</strong>
+        परिवार के सदस्यों की संख्या।
+        परिवार के मुखिया का पेशा।
+        विभिन्न स्रोतों से कुल वार्षिक आय।
+      </p>
+
+      <h3>आवेदन की स्थिति कैसे जाँचें</h3>
+      <ul>
+        <li>RTPS पोर्टल पर वापस जाएँ: <a href="https://serviceonline.bihar.gov.in/" target="_blank">https://serviceonline.bihar.gov.in/</a></li>
+        <li>होमपेज पर "आवेदन की स्थिति देखें" (View Application Status) पर क्लिक करें।</li>
+        <li>अपनी <strong>आवेदन संख्या (Application Number)</strong> दर्ज करें।</li>
+        <li>"ट्रैक स्टेटस" (Track Status) पर क्लिक करें।</li>
+        <li>आपके आवेदन की वर्तमान स्थिति (जैसे लंबित, सत्यापन में, स्वीकृत, अस्वीकृत) स्क्रीन पर दिखाई देगी।</li>
+      </ul>
+
+      <h3>प्रमाण पत्र डाउनलोड कैसे करें</h3>
+      <ul>
+        <li>जब आपका प्रमाण पत्र स्वीकृत हो जाए, तो आप इसे RTPS पोर्टल से डाउनलोड कर सकते हैं।</li>
+        <li>"आवेदन की स्थिति देखें" सेक्शन में जाकर अपनी आवेदन संख्या दर्ज करें।</li>
+        <li>यदि प्रमाण पत्र तैयार है, तो आपको डाउनलोड का विकल्प मिलेगा।</li>
+      </ul>
+
+      <h3>महत्वपूर्ण सुझाव</h3>
+      <ul>
+        <li><strong>जानकारी की सटीकता:</strong> फॉर्म में सभी जानकारी बिल्कुल सही भरें। किसी भी गलती से आवेदन रद्द हो सकता है।</li>
+        <li><strong>दस्तावेज़ की गुणवत्ता:</strong> अपलोड किए जाने वाले दस्तावेज़ स्पष्ट, स्कैन किए हुए और सही फॉर्मेट में होने चाहिए। धुंधले या कटे हुए दस्तावेज़ स्वीकार नहीं किए जाएंगे।</li>
+        <li><strong>मोबाइल नंबर:</strong> एक ऐसा मोबाइल नंबर दें जो हमेशा चालू रहे, क्योंकि आपको आवेदन की स्थिति और किसी भी अपडेट के बारे में SMS के माध्यम से सूचित किया जा सकता है।</li>
+        <li><strong>आवेदन संख्या:</strong> अपनी आवेदन संख्या को सुरक्षित रखें। यह भविष्य के सभी संदर्भों के लिए महत्वपूर्ण है।</li>
+        <li><strong>समय-सीमा:</strong> सामान्यतः, इन प्रमाण पत्रों को जारी करने में 7-10 कार्य दिवस लगते हैं, लेकिन यह अंचल कार्यालय के कार्यभार पर निर्भर करता है।</li>
+        <li><strong>नवीनतम जानकारी:</strong> सरकारी पोर्टल और प्रक्रियाएँ समय-समय पर बदल सकती हैं। आवेदन करने से पहले हमेशा आधिकारिक वेबसाइट पर नवीनतम निर्देशों की जाँच करें।</li>
+      </ul>
     </section>
 
     <section id="contact">
@@ -221,14 +857,37 @@
   </main>
 
   <footer>
-    &copy; 2025 Bihar Agriculture Input Anudaan. सभी अधिकार सुरक्षित.<br>
-    <a href="index.html" style="text-decoration:none;color:#333;">Home</a> | 
-    <a href="about.html" style="text-decoration:none;color:#333;">About</a> | 
-    <a href="privacy.html" style="text-decoration:none;color:#333;">Privacy Policy</a> | 
-    <a href="index.html#contact" style="text-decoration:none;color:#333;">Contact</a>
+    &copy; 2025 बिहार सरकारी सेवाएं. सभी अधिकार सुरक्षित.<br>
+    <a href="index.html">होम</a> |
+    <a href="about.html">हमारे बारे में</a> |
+    <a href="privacy.html">गोपनीयता नीति</a> |
+    <a href="#contact">संपर्क</a>
   </footer>
 
+  <button id="backToTopBtn" title="Go to top">↑</button>
+
   <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Sticky header effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Print section function
     function printSection(sectionId) {
       var content = document.getElementById(sectionId);
       if (!content) return;
@@ -242,6 +901,55 @@
       pri.focus();
       setTimeout(function(){ pri.print(); pri.close(); }, 300);
     }
+
+    // Accordion functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const content = header.nextElementSibling;
+        const icon = header.querySelector('.icon');
+
+        // Close all other open accordions in the same container
+        const parentContainer = header.closest('.accordion-container');
+        if (parentContainer) {
+          parentContainer.querySelectorAll('.accordion-header.active').forEach(activeHeader => {
+            if (activeHeader !== header) {
+              activeHeader.classList.remove('active');
+              activeHeader.nextElementSibling.classList.remove('open');
+              activeHeader.querySelector('.icon').style.transform = 'rotate(0deg)';
+            }
+          });
+        }
+
+        // Toggle current accordion
+        header.classList.toggle('active');
+        content.classList.toggle('open');
+        if (header.classList.contains('active')) {
+          icon.style.transform = 'rotate(90deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    });
+
+    // Back to Top Button functionality
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    }
+
+    backToTopBtn.addEventListener('click', function() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+
   </script>
 </body>
 </html>
+```

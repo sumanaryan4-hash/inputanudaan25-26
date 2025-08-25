@@ -17,8 +17,27 @@
     header {
       background: #4CAF50;
       color: white;
-      padding: 20px 0;
-      text-align: center;
+    }
+    header div {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     main {
       max-width: 900px;
@@ -69,11 +88,27 @@
       box-shadow: 0 1px 6px rgba(0,0,0,0.08);
       font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;
     }
+    button {
+      padding:6px 10px;
+      border-radius:6px;
+      border:1px solid #ddd;
+      background:#fff;
+      cursor:pointer;
+    }
   </style>
 </head>
 <body>
+  <!-- Updated Header with Navigation -->
   <header>
-    <h1>Bihar Agriculture Input Anudaan 2025-26</h1>
+    <div>
+      <h1>Bihar Agriculture Input Anudaan 2025-26</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -140,7 +175,7 @@
       <header style="display:flex;align-items:center;justify-content:space-between;">
         <h2 id="bhu-title" style="margin:0;font-size:1.25rem;color:#0b3d91;">BHULAGAN / Bihar Bhumi — ऑनलाइन लगान भुगतान (स्टेप-बाय-स्टेप)</h2>
         <div>
-          <button type="button" onclick="printSection('bhu-lagan-guide')" style="padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:#fff;cursor:pointer;">Print</button>
+          <button type="button" onclick="printSection('bhu-lagan-guide')">Print</button>
         </div>
       </header>
 
@@ -152,9 +187,7 @@
       <ol style="padding-left:18px;color:#222;line-height:1.6;">
         <li>
           <strong>जो चीज़ें पहले तैयार रखें</strong>
-          <div style="margin-top:6px;">
-            जिले का नाम, अंचल/हल्का, मौजा, भाग-नंबर और पृष्ठ संख्या — या खाता/खेसरा विवरण।
-          </div>
+          <div style="margin-top:6px;">जिले का नाम, अंचल/हल्का, मौजा, भाग-नंबर और पृष्ठ संख्या — या खाता/खेसरा विवरण।</div>
           <img src="6.jpg" alt="Step 1 Screenshot" style="margin-top:8px;max-width:100%;border-radius:6px;border:1px solid #ccc;">
         </li>
         <li style="margin-top:10px;">
@@ -189,7 +222,10 @@
 
   <footer>
     &copy; 2025 Bihar Agriculture Input Anudaan. सभी अधिकार सुरक्षित.<br>
-    Managed and Developed by Suman Saurav
+    <a href="index.html" style="text-decoration:none;color:#333;">Home</a> | 
+    <a href="about.html" style="text-decoration:none;color:#333;">About</a> | 
+    <a href="privacy.html" style="text-decoration:none;color:#333;">Privacy Policy</a> | 
+    <a href="index.html#contact" style="text-decoration:none;color:#333;">Contact</a>
   </footer>
 
   <script>
